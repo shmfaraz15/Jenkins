@@ -1,22 +1,35 @@
-pipeline { 
+pipeline {
     agent any
     stages {
         stage('Clone Git') {
             steps {
-                git 'https://github.com/BThangaraju/Jenkins.git'
+                echo 'This is the cloning stage'
             }
         }
         stage('Build Code') {
             steps {
-                sh "chmod u+x Prog1.py"
-                sh "./Prog1.py"
+                echo 'This is the buliding stage'
             }
         }
-     stage('Test Code') {
+        stage('Test Code') {
             steps {
-                sh "chmod u+x Tes.py"
-                sh "./Test.py"
+                echo 'This is the testing stage'
             }
         }
-    } 
+        stage('Deliver') {
+            steps {
+                echo 'This is the delivering stage'
+            }
+        }
+        stage('Deployment') {
+            steps {
+                echo 'This is the'
+            }
+        }
+        stage('Monitoring') {
+            steps {
+                echo 'This is the monitoring stage'
+            }
+        }
+    }
 }
